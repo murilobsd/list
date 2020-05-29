@@ -179,6 +179,15 @@ list_free(list_t *l)
 		free(current);
 	}
 
+	if (current != NULL)
+		free(current);
+
+	SELF->head = NULL;
+	SELF->tail = NULL;
+	SELF->freefn = NULL;
+	SELF->length = 0;
+	SELF->size = 0;
+
 	free(l);
 }
 
