@@ -56,7 +56,7 @@ main(void)
 	if (list_first_el(list, &first) == 0)
 		printf("new first value: %d\n", first);
 
-	printf("List size: %u elements\n", list_size(list));
+	printf("List size: %u elements\n", list_len(list));
 
 	list_iterator(list, print_int);
 

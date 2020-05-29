@@ -150,7 +150,7 @@ list_first_el(list_t *l, void *el)
 }
 
 uint32_t
-list_size(list_t *l)
+list_len(list_t *l)
 {
 	return SELF->length;
 }

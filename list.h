@@ -14,8 +14,8 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#ifndef _LIST_H
-#define _LIST_H
+#ifndef LIST_H
+#define LIST_H
 
 #include <stdint.h>
 
@@ -33,13 +33,18 @@ typedef bool (*iterator_func)(void *);
 /* linked list */
 typedef struct list list_t;
 
-list_t		*list_new(uint32_t, free_func);
-void		 list_free(list_t *);
-uint32_t	 list_size(list_t *);
-int		 list_first_el(list_t *, void *);
-int		 list_last_el(list_t *, void *);
-int		 list_prepend(list_t *, void *);
-int		 list_append(list_t *, void *);
-int		 list_iterator(list_t *, iterator_func);
+/* list.c */
+extern list_t		*list_new(uint32_t, free_func);
+extern void		 list_free(list_t *);
+extern uint32_t	 	 list_len(list_t *);
+extern int		 list_first_el(list_t *, void *);
+extern int		 list_last_el(list_t *, void *);
+extern int		 list_append(list_t *, void *);
+extern int		 list_prepend(list_t *, void *);
+extern int		 list_iterator(list_t *, iterator_func);
 
-#endif /* _LIST_H */
+#ifdef DEBUG
+extern void		 list_dump(list_t *);
+#endif
+
+#endif /* LIST_H */
