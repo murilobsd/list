@@ -20,7 +20,7 @@ CFLAGS:=	-std=c89 -O2 -Wall -Wunused \
 LDFLAGS:=	-L.
 NAME:=		list
 MAJOR:=		0
-MINOR:=		1
+MINOR:=		2
 VERSION:=	$(MAJOR).$(MINOR)
 SLIB:=		lib$(NAME).a
 DLIB:=		lib$(NAME).so

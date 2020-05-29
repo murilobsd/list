@@ -181,6 +181,9 @@ list_new(uint32_t el_size, free_func freefn)
 {
 	list_t *l;
 
+	if (el_size == 0)
+		return NULL;
+
 	l = (list_t *)xmalloc(sizeof(list_t));
 
 	SELF->head = NULL;
