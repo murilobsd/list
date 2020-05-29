@@ -69,6 +69,9 @@ list_append(list_t *l, void *el)
 		return (-1);
 
 	node = node_new();
+	if (node == NULL)
+		return (-1);
+
 	node->data = xmalloc(SELF->size);
 	node->next = NULL;
 	memcpy(node->data, el, SELF->size);
@@ -96,6 +99,9 @@ list_prepend(list_t *l, void *el)
 
 	/* init and copy data to node */
 	node = node_new();
+	if (node == NULL)
+		return (-1);
+
 	node->data = xmalloc(SELF->size);
 	memcpy(node->data, el, SELF->size);
 
@@ -116,7 +122,7 @@ node_new(void)
 {
 	node_t *n;
 
-	n = xmalloc(sizeof(node_t));
+	n = malloc(sizeof(node_t));
 
 	return n;
 }
